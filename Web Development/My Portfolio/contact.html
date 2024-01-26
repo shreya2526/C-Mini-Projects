@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./contact.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+<body>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <p>Thank you for reaching out! Let's connect and code the future together.</p>
+        </div>
+        
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><img src="./map.png" alt=""></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Haldia, 721635, Medinipur(E), West Bengal, India.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><img src="./gmail.png" alt=""></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>helloshreya01@gmail.com,</p>
+                        <p>shreya25chakraborty@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h3>Send Message</h3>
+                    <div class="inputBox">
+                        <input type="text" id="sendername" name="Full Name" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" id="to" name="" required="required">
+                        <span>Enter any of my mail id</span>
+                    <div class="inputBox">
+                        <input type="email" id="replyto" name="" required="required">
+                        <span>Your Email id</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="subject" name="" required="required">
+                        <span>Subject of Mail </span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea id="message" required="required"></textarea>
+                        <span>Type Your Message...</span>
+                    </div>
+                </form>
+                <button onclick="sendMail();">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function sendMail(){
+            (function(){
+                emailjs.init("uP-ctK9zHUCv6m-ER");//account public key
+            })();
+
+
+            var params = {
+                sendername: document.querySelector("#sendername").value,
+                to: document.querySelector("#to").value,
+                replyto: document.querySelector("#replyto").value,
+                subject: document.querySelector("#subject").value,
+                message: document.querySelector("#message").value,
+            };
+
+            var serviceID="service_morkf0e"; //email service id
+            var templateID="template_ooefpbt"; //email template id
+
+            emailjs.send(serviceID,templateID,params)
+            .then( res => {
+                alert("Email Sent Successfully!");
+            })
+            .catch();
+        }
+    </script>
+</body>
+</html>

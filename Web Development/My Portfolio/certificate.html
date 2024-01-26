@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates</title>
+    <link rel="stylesheet" href="./certificate.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+    <div class="theme-icon">
+        
+    </div>
+    <div class="headline1">
+        <span>
+            <h2>Python Programming Course from Udemy :</h2>
+        </span>
+        <img src="./moon.png" id="icon">
+    </div>
+    
+    <div class="cer1">
+        <span class="photo">
+            <a href="https://www.udemy.com/" target="_blank"><img src="./python.jpeg" alt="Certificate of Python course from Udemy"></a>
+            
+        </span>
+    </div>
+
+    <div class="headline2">
+        <span>
+            <h2>Web Development Course from Coursera :</h2>
+        </span>
+    </div>
+
+    <div class="cer2">
+        <span class="photo">
+            <a href="https://www.coursera.org/" target="_blank"><img src="./webdevelopment.jpeg" alt="Certificate of Web Development course from Coursera"></a>
+            
+        </span>
+    </div>
+
+    <div class="headline3">
+        <span>
+            <h2>Full Stack Web Developement using Python on Django Frameork Course from MySirG :</h2>
+        </span>
+    </div>
+    
+    <div class="cer3">
+        <span class="photo">
+            <a href="https://premium.mysirg.com/" target="_blank"><img src="./MysirgPython.jpg" alt="Certificate of Full Stack Web Developement using Python on Django Frameork course from MySirG"></a>
+            
+        </span>
+    </div>
+
+    <div class="headline4">
+        <span>
+            <h2>Ethical Hacking Course from Udemy :</h2>
+        </span>
+    </div>
+
+    <div class="cer4">
+        <span class="photo">
+            <a href="https://www.udemy.com/" target="_blank"><img src="./ethical hacking.jpeg" alt="Certificate of Ethical Hacking course from Udemy"></a>
+        </span>
+    </div>
+    <div class="cer5"></div>
+    <div class="cer6"></div>
+<script>
+     var icon = document.getElementById("icon");
+      icon.onclick= function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+          icon.src="./sun.png";
+        }
+        else{
+          icon.src="./moon.png";
+        }
+      }
+</script>
+   
+</body>
+</html>
